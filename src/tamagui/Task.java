@@ -9,14 +9,24 @@ package tamagui;
  * @author Christian
  */
 public class Task extends javax.swing.JPanel {
-    private String taskName;    
+    private final String taskName;
+    private final String difficulty;
+    private final String dueDate;
+    private final String dueTime;
+    
     /**
      * Creates new form Task
      * @param taskname
+     * @param difficulty
+     * @param dueDate
+     * @param dueTime
      */
-    public Task(String taskname) {
+    public Task(String taskname, String difficulty, String dueDate, String dueTime) {
         initComponents();
-        taskName = taskname;
+        this.taskName = taskname;
+        this.difficulty = difficulty;
+        this.dueDate = dueDate;
+        this.dueTime = dueTime;
     }
 
     /**
@@ -49,8 +59,20 @@ public class Task extends javax.swing.JPanel {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+    public  String getTaskName(){
+        return this.taskName;
+    }
 
-
+    public  String getDifficulty(){
+        return this.difficulty;
+    }
+    
+    public  String getDueDate(){
+        return this.dueDate;
+    }
+    public  String getDueTime(){
+        return this.dueTime;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel taskNameLabel;
     // End of variables declaration//GEN-END:variables

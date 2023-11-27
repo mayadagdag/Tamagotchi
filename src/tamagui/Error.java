@@ -4,6 +4,8 @@
  */
 package tamagui;
 
+import java.util.Date;
+
 /**
  *
  * @author Christian
@@ -26,17 +28,20 @@ public class Error extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        Return = new javax.swing.JButton();
+        ErrorLabel = new javax.swing.JLabel();
+        ErrorReturn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Please fill all required fields*");
+        ErrorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ErrorLabel.setLabelFor(ErrorLabel);
+        ErrorLabel.setText("Please fill all required fields");
+        ErrorLabel.setMaximumSize(new java.awt.Dimension(300, 17));
 
-        Return.setText("Return");
-        Return.addActionListener(new java.awt.event.ActionListener() {
+        ErrorReturn.setText("Return");
+        ErrorReturn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ReturnActionPerformed(evt);
+                ErrorReturnActionPerformed(evt);
             }
         });
 
@@ -45,32 +50,31 @@ public class Error extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(Return))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ErrorReturn)
+                        .addGap(122, 122, 122))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Return)
-                .addGap(14, 14, 14))
+                .addComponent(ErrorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ErrorReturn)
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
-        addTask addTask = new addTask(); //creates instance of adding a task
-        addTask.setVisible(true); //opens Add Task Window
+    private void ErrorReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ErrorReturnActionPerformed
+
         this.dispose();
-    }//GEN-LAST:event_ReturnActionPerformed
+    }//GEN-LAST:event_ErrorReturnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,9 +110,14 @@ public class Error extends javax.swing.JFrame {
             }
         });
     }
+    
+    // Get method for dueDate
+    public void SetErrorMsg(String errMsg) {
+        ErrorLabel.setText(errMsg);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Return;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel ErrorLabel;
+    private javax.swing.JButton ErrorReturn;
     // End of variables declaration//GEN-END:variables
 }
