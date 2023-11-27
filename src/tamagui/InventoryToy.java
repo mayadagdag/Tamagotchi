@@ -93,7 +93,9 @@ public class InventoryToy extends javax.swing.JFrame {
             case 3:
             case 4:
             case 5:
-        }        
+        }
+        
+        this.dispose();
     }//GEN-LAST:event_useItemActionPerformed
 
     /**
